@@ -1,6 +1,6 @@
-FROM ubuntu:20.04
+FROM ubuntu:latest
 
-ARG RUNNER_VERSION="2.317.0"
+ARG RUNNER_VERSION="2.323.0"
 ARG DEBIAN_FRONTEND=noninteractive
 
 # Update and upgrade the system
