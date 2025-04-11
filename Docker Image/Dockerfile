@@ -28,5 +28,11 @@ RUN chmod +x /start.sh
 # Switch to docker user
 USER docker
 
+# Set the working directory
+WORKDIR /home/docker/actions-runner
+
+# Set Volumes for the runner
+VOLUME /home/docker/actions-runner/_work
+
 # Define the entrypoint
 ENTRYPOINT ["/start.sh"]

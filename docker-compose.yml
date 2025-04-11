@@ -8,6 +8,11 @@ services:
       - REPO=<owner>/<repo>
       - REG_TOKEN=<reg-token-for-self-hosted-runner>
       - NAME=<runner-name>
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /usr/libexec/docker/cli-plugins:/usr/libexec/docker/cli-plugins:ro
+      - /usr/bin/docker:/usr/bin/docker:ro
+      - <path-to-your-github-actions-runner-workdir>:/home/docker/actions-runner/_work
     deploy:
       mode: replicated
       replicas: 2
